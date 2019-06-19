@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ import { Component } from '@angular/core';
 
       <img [src] = "img">
       
-      <input type="text" [value] = "name" >
+      <input
+            type="text" 
+            [value] = "name"
+            (blur) = "handleBlur($event)">
 
       <div>
           {{ name }}
@@ -41,5 +45,10 @@ export class AppComponent{
 
   constructor(){
     this.title = 'Ultimate Angular';
+  }
+
+  handleBlur(event: any){
+    this.name = event.target.value;
+    console.log(event)
   }
 }

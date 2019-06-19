@@ -17,7 +17,7 @@ class ShoppingList2{
 
 }
 
-var shoppingList2 = new ShoppingList2();
+const shoppingList2 = new ShoppingList2();
 
 shoppingList2.addItem('Pear2');
 shoppingList2.addItem('Apple2');

@@ -14,15 +14,20 @@ import { TouchSequence } from 'selenium-webdriver';
       <br>
       {{ numberTwo + numberOne }}
 
+      <br>
+      <br>
       <img [src] = "img">
       
-      <input
-            type="text" 
-            [value] = "name"
-            (blur) = "handleBlur($event)">
+      <button (click)="handleClick(username.value)" >
+        Get Value
+      </button>
 
-      <div>
-          {{ name }}
+      <input #username
+            type="text" 
+            [(ngModel)] = "name">
+
+      <div *ngIf= "name.length" > 
+         Searching for: {{ name }}  
       </div>
     </div>
 
@@ -40,6 +45,7 @@ export class AppComponent{
   numberOne: number =1;
   numberTwo: number =2;
   isHappy: boolean = true;
+  
   img: string = 'favicon.ico';
   name: string = 'Martin';
 
@@ -47,8 +53,13 @@ export class AppComponent{
     this.title = 'Ultimate Angular';
   }
 
-  handleBlur(event: any){
-    this.name = event.target.value;
-    console.log(event)
+  handleClick(username: string){
+    // this.name = 'Gelev';
+
+    console.log(username)
   }
+
+  
+ 
+
 }

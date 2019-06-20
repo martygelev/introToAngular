@@ -12,7 +12,7 @@ import { TouchSequence } from 'selenium-webdriver';
     <div> 
       {{ numberOne }}
       <br>
-      {{ numberTwo + numberOne }}
+      {{ numberTwo + numberOne  }}
 
       <br>
       <br>
